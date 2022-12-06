@@ -33,5 +33,14 @@ func main() {
 		}
 	}
 
-	fmt.Println(buckets[max(buckets)])
+	allMax := buckets[max(buckets)]
+	fmt.Println(allMax)
+
+	topThreeTotal := allMax
+	buckets[max(buckets)] = 0
+	topThreeTotal += buckets[max(buckets)]
+	buckets[max(buckets)] = 0
+	topThreeTotal += buckets[max(buckets)]
+	
+	fmt.Println(topThreeTotal)
 }
